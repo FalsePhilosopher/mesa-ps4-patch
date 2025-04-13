@@ -1,4 +1,4 @@
---- mesa-mesa-25.0.3/include/pci_ids/radeonsi_pci_ids.h	2025-04-02 10:35:11.000000000 -0600
+--- mesa/include/pci_ids/radeonsi_pci_ids.h	2025-04-02 10:35:11.000000000 -0600
 +++ radeonsi_pci_ids-patched.h	2025-04-12 20:32:25.584568630 -0600
 @@ -88,6 +88,11 @@
  CHIPSET(0x665D, BONAIRE)
@@ -12,7 +12,7 @@
  CHIPSET(0x9830, KABINI)
  CHIPSET(0x9831, KABINI)
  CHIPSET(0x9832, KABINI)
---- mesa-mesa-25.0.3/src/amd/addrlib/src/amdgpu_asic_addr.h	2025-04-02 10:35:11.000000000 -0600
+--- mesa/src/amd/addrlib/src/amdgpu_asic_addr.h	2025-04-02 10:35:11.000000000 -0600
 +++ amdgpu_asic_addr-patched.h	2025-04-12 20:39:27.285639884 -0600
 @@ -62,7 +62,9 @@
  #define AMDGPU_HAWAII_RANGE     0x28, 0x3C //# 40 <= x < 60
@@ -34,7 +34,7 @@
  #define ASICREV_IS_KALINDI(r)          ASICREV_IS(r, KALINDI)
  #define ASICREV_IS_KALINDI_GODAVARI(r) ASICREV_IS(r, GODAVARI)
  
---- mesa-mesa-25.0.3/src/amd/common/ac_gpu_info.c	2025-04-02 10:35:11.000000000 -0600
+--- mesa/src/amd/common/ac_gpu_info.c	2025-04-02 10:35:11.000000000 -0600
 +++ ac_gpu_info-patched.c	2025-04-12 20:46:27.543346927 -0600
 @@ -771,6 +771,8 @@
        case FAMILY_KV:
@@ -78,7 +78,7 @@
     /* 2 SEs / 8 RBs */
     case CHIP_TAHITI:
     case CHIP_PITCAIRN:
---- mesa-mesa-25.0.3/src/amd/common/amd_family.h	2025-04-02 10:35:11.000000000 -0600
+--- mesa/src/amd/common/amd_family.h	2025-04-02 10:35:11.000000000 -0600
 +++ amd_family-patched.h	2025-04-12 20:48:03.635761678 -0600
 @@ -80,6 +80,8 @@
     CHIP_HAINAN,
@@ -89,7 +89,7 @@
     CHIP_KAVERI,
     CHIP_KABINI,
     CHIP_HAWAII,         /* Radeon 290, 390 */
---- mesa-mesa-25.0.3/src/amd/vulkan/winsys/null/radv_null_winsys.c	2025-04-02 10:35:11.000000000 -0600
+--- mesa/src/amd/vulkan/winsys/null/radv_null_winsys.c	2025-04-02 10:35:11.000000000 -0600
 +++ radv_null_winsys-patched.c	2025-04-12 21:02:40.474127355 -0600
 @@ -27,6 +27,10 @@
     [CHIP_OLAND] = {0x6060, 2, true},
@@ -102,7 +102,7 @@
     [CHIP_KAVERI] = {0x1304, 2, false},
     [CHIP_KABINI] = {0x9830, 2, false},
     [CHIP_HAWAII] = {0x67A0, 16, true},
---- mesa-mesa-25.0.3/src/gallium/targets/d3dadapter9/description.c	2025-04-02 10:35:11.000000000 -0600
+--- mesa/src/gallium/targets/d3dadapter9/description.c	2025-04-02 10:35:11.000000000 -0600
 +++ description-patched.c	2025-04-12 21:04:36.711167710 -0600
 @@ -36,6 +36,8 @@
      {"KAVERI",                      "AMD Radeon(TM) R7 Graphics"},
@@ -113,7 +113,7 @@
      {"OLAND",                       "AMD Radeon HD 8670"},
      {"HAINAN",                      "AMD Radeon HD 8600M Series"},
      {"TAHITI",                      "AMD Radeon HD 7900 Series"},
---- mesa-mesa-25.0.3/src/gallium/winsys/radeon/drm/radeon_drm_winsys.c	2025-04-02 10:35:11.000000000 -0600
+--- mesa/src/gallium/winsys/radeon/drm/radeon_drm_winsys.c	2025-04-02 10:35:11.000000000 -0600
 +++ radeon_drm_winsys-patched.c	2025-04-12 21:08:07.733237475 -0600
 @@ -259,6 +259,8 @@
        ws->info.gfx_level = GFX6;
