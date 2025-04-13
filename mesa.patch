@@ -169,16 +169,3 @@ diff -Naur mesa/src/gallium/winsys/radeon/drm/radeon_drm_winsys.c mesa-patched/s
           ws->info.max_se = 4;
           break;
        }
-
-diff -Naur mesa/src/amd/vulkan/meta/radv_meta_fast_clear.c mesa-patched/src/amd/vulkan/meta/radv_meta_fast_clear.c
---- mesa/src/amd/vulkan/meta/radv_meta_fast_clear.c	2022-05-26 05:45:45.000000000 +0300
-+++ mesa-patched/src/amd/vulkan/meta/radv_meta_fast_clear.c	2022-06-09 09:05:53.760432012 +0300
-@@ -558,7 +558,7 @@
-    switch (op) {
-    case FAST_CLEAR_ELIMINATE:
-       pipeline = &device->meta_state.fast_clear_flush.cmask_eliminate_pipeline;
--      pred_offset = image->fce_pred_offset;
-+      pred_offset = 0;
-       break;
-    case FMASK_DECOMPRESS:
-       pipeline = &device->meta_state.fast_clear_flush.fmask_decompress_pipeline;
