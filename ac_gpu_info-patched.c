@@ -2222,9 +2222,9 @@ void ac_get_raster_config(const struct radeon_info *info, uint32_t *raster_confi
       raster_config_1 = 0x00000000;
       break;
       case CHIP_LIVERPOOL:
-+      raster_config = 0x2a00161a;
-+	  raster_config_1 = 0x00000000;
-+	  break;
++        raster_config = 0x2a00161a;
++	       raster_config_1 = 0x00000000;
++	       break;
 +   case CHIP_GLADIUS:
 +	  raster_config = 0x2a00161a;
 +	  raster_config_1 = 0x0000002e;
