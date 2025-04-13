@@ -19,20 +19,20 @@ diff -Naur mesa/src/amd/addrlib/src/amdgpu_asic_addr.h mesa-patched/src/amd/addr
 @@ -74,7 +74,9 @@
  #define AMDGPU_HAWAII_RANGE     0x28, 0x3C
  
-#define AMDGPU_SPECTRE_RANGE    0x01, 0x41 //#   1 <= x < 65
+ #define AMDGPU_SPECTRE_RANGE    0x01, 0x41 //#   1 <= x < 65
 -#define AMDGPU_SPOOKY_RANGE     0x41, 0x81 //#  65 <= x < 129
-+#define AMDGPU_SPOOKY_RANGE     0x41, 0x61
-+#define AMDGPU_STARSHA_RANGE    0x61, 0x71
-+#define AMDGPU_STARSHP_RANGE    0x71, 0x81
++#define AMDGPU_SPOOKY_RANGE     0x41, 0x61 //#  65 <= x < 97
++#define AMDGPU_STARSHA_RANGE    0x61, 0x71 //#  97 <= x < 113
++#define AMDGPU_STARSHP_RANGE    0x71, 0x81 //# 113 <= x < 129
  #define AMDGPU_KALINDI_RANGE    0x81, 0xA1 //# 129 <= x < 161
  #define AMDGPU_GODAVARI_RANGE   0xA1, 0xFF //# 161 <= x < max
  
-@@ -134,6 +136,8 @@
+@@ -134,6 +134,8 @@
  
  #define ASICREV_IS_SPECTRE(r)          ASICREV_IS(r, SPECTRE)
  #define ASICREV_IS_SPOOKY(r)           ASICREV_IS(r, SPOOKY)
-+#define ASICREV_IS_STARSHA(r)           ASICREV_IS(r, STARSHA)
-+#define ASICREV_IS_STARSHP(r)           ASICREV_IS(r, STARSHP)
++#define ASICREV_IS_STARSHA(r)          ASICREV_IS(r, STARSHA)
++#define ASICREV_IS_STARSHP(r)          ASICREV_IS(r, STARSHP)
  #define ASICREV_IS_KALINDI(r)          ASICREV_IS(r, KALINDI)
  #define ASICREV_IS_KALINDI_GODAVARI(r) ASICREV_IS(r, GODAVARI)
  
@@ -170,9 +170,9 @@ diff -Naur mesa/src/gallium/winsys/radeon/drm/radeon_drm_winsys.c mesa-patched/s
           break;
        }
 
-diff -Naur mesa/src/amd/vulkan/radv_meta_fast_clear.c mesa-patched/src/amd/vulkan/radv_meta_fast_clear.c
---- mesa/src/amd/vulkan/radv_meta_fast_clear.c	2022-05-26 05:45:45.000000000 +0300
-+++ mesa-patched/src/amd/vulkan/radv_meta_fast_clear.c	2022-06-09 09:05:53.760432012 +0300
+diff -Naur mesa/src/amd/vulkan/meta/radv_meta_fast_clear.c mesa-patched/src/amd/vulkan/meta/radv_meta_fast_clear.c
+--- mesa/src/amd/vulkan/meta/radv_meta_fast_clear.c	2022-05-26 05:45:45.000000000 +0300
++++ mesa-patched/src/amd/vulkan/meta/radv_meta_fast_clear.c	2022-06-09 09:05:53.760432012 +0300
 @@ -558,7 +558,7 @@
     switch (op) {
     case FAST_CLEAR_ELIMINATE:
