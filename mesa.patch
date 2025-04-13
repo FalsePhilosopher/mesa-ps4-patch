@@ -145,3 +145,14 @@
           ws->info.max_se = 4;
           break;
        }
+--- mesa/src/gallium/winsys/radeon/drm/radeon_surface.c	2025-04-12 23:14:06.779284863 -0600
++++ radeon_surface.c	2025-04-12 23:12:07.574346068 -0600
+@@ -78,6 +78,8 @@
+     CHIP_OLAND,
+     CHIP_HAINAN,
+     CHIP_BONAIRE,
++    CHIP_LIVERPOOL,
++    CHIP_GLADIUS,
+     CHIP_KAVERI,
+     CHIP_KABINI,
+     CHIP_HAWAII,
