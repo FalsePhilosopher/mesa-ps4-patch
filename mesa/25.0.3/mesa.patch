@@ -156,3 +156,25 @@
      CHIP_KAVERI,
      CHIP_KABINI,
      CHIP_HAWAII,
+--- mesa/src/amd/common/amd_family.c	2025-04-22 12:40:01.508061990 -0600
++++ amd_family.c	2025-04-22 14:59:28.582004242 -0600
+@@ -19,6 +19,8 @@
+    CASE(OLAND);
+    CASE(HAINAN);
+    CASE(BONAIRE);
++   CASE(LIVERPOOL);
++   CASE(GLADIUS);
+    CASE(KABINI);
+    CASE(KAVERI);
+    CASE(HAWAII);
+@@ -105,6 +107,10 @@
+       return "hainan";
+    case CHIP_BONAIRE:
+       return "bonaire";
++   case CHIP_LIVERPOOL:
++      return "liverpool";
++   case CHIP_GLADIUS:
++      return "gladius";
+    case CHIP_KABINI:
+       return "kabini";
+    case CHIP_KAVERI:
